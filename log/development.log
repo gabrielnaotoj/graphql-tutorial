@@ -623,3 +623,404 @@ Did you mean?  _ctx):
   
 app/graphql/resolvers/sign_in_user.rb:30:in `call'
 app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:17 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 2.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:23 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:24 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:24 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:24 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 0.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:24 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:25 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:25 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:25 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:25 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:25 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:26 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:26 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:26 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:26 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:26 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.br\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com.br"], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:45 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com.\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com."], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:20:48 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com\"\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 0.5ms)
+
+
+  
+NameError (undefined local variable or method `ctx' for #<Resolvers::SignInUser:0x00007fc328bf13a8>
+Did you mean?  _ctx):
+  
+app/graphql/resolvers/sign_in_user.rb:30:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:21:02 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 150ms (ActiveRecord: 0.8ms)
+
+
+  
+NameError (undefined local variable or method `ctx' for #<Resolvers::SignInUser:0x00007fc328bf13a8>
+Did you mean?  _ctx):
+  
+app/graphql/resolvers/sign_in_user.rb:30:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:21:03 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 0.6ms)
+
+
+  
+NameError (undefined local variable or method `ctx' for #<Resolvers::SignInUser:0x00007fc328bf13a8>
+Did you mean?  _ctx):
+  
+app/graphql/resolvers/sign_in_user.rb:30:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:21:04 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 0.6ms)
+
+
+  
+NameError (undefined local variable or method `ctx' for #<Resolvers::SignInUser:0x00007fc328bf13a8>
+Did you mean?  _ctx):
+  
+app/graphql/resolvers/sign_in_user.rb:30:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:21:04 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 0.6ms)
+
+
+  
+NameError (undefined local variable or method `ctx' for #<Resolvers::SignInUser:0x00007fc328bf13a8>
+Did you mean?  _ctx):
+  
+app/graphql/resolvers/sign_in_user.rb:30:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:21:05 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(\n    email: {\n      email: \"gabriel.naoto@jungsoft.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n    user {\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (undefined local variable or method `ctx' for #<Resolvers::SignInUser:0x00007fc328bf13a8>
+Did you mean?  _ctx):
+  
+app/graphql/resolvers/sign_in_user.rb:30:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:21:06 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signinUser(email: {email: \"gabriel.naoto@jungsoft.com\", password: \"senha\"}) {\n    token\n    user {\n      id\n    }\n  }\n}\n", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signinUser(email: {email: \"gabriel.naoto@jungsoft.com\", password: \"senha\"}) {\n    token\n    user {\n      id\n    }\n  }\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 0.6ms)
+
+
+  
+NameError (undefined local variable or method `ctx' for #<Resolvers::SignInUser:0x00007fc328bf13a8>
+Did you mean?  _ctx):
+  
+app/graphql/resolvers/sign_in_user.rb:30:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:22:50 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signInUser(email: {email: \"gabriel.naoto@jungsoft.com\", password: \"senha\"}) {\n    token\n    user {\n      id\n    }\n  }\n}\n", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signInUser(email: {email: \"gabriel.naoto@jungsoft.com\", password: \"senha\"}) {\n    token\n    user {\n      id\n    }\n  }\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 1.2ms)
+
+
+  
+NameError (undefined local variable or method `ctx' for #<Resolvers::SignInUser:0x00007fc320ef1bf0>
+Did you mean?  _ctx):
+  
+app/graphql/resolvers/sign_in_user.rb:30:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:25:26 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation{\n  createUser(\n    name: \"Gabriel\",\n    authProvider: {\n      email: {\n        email: \"gabriel@email.com\",\n        password: \"senha\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation{\n  createUser(\n    name: \"Gabriel\",\n    authProvider: {\n      email: {\n        email: \"gabriel@email.com\",\n        password: \"senha\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gabriel"], ["email", "gabriel@email.com"], ["password_digest", "$2a$10$SdEYcEKDB0qxa77u5JrH5ODJzEfHVSd6Zxh7EOncfLSp783klIyUi"], ["created_at", "2018-12-18 20:25:26.880499"], ["updated_at", "2018-12-18 20:25:26.880499"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 152ms (Views: 0.4ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:26:32 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n\nmutation {\n  signInUser(\n    email: {\n      email: \"gabriel@email.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"\n\nmutation {\n  signInUser(\n    email: {\n      email: \"gabriel@email.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 0.5ms)
+
+
+  
+NameError (undefined local variable or method `ctx' for #<Resolvers::SignInUser:0x00007fc320ef1bf0>
+Did you mean?  _ctx):
+  
+app/graphql/resolvers/sign_in_user.rb:30:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:27:11 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signInUser(\n    email: {\n      email: \"gabriel@email.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signInUser(\n    email: {\n      email: \"gabriel@email.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 2.1ms)
+
+
+  
+NameError (undefined local variable or method `ctx' for #<Resolvers::SignInUser:0x00007fc328c35080>
+Did you mean?  _ctx):
+  
+app/graphql/resolvers/sign_in_user.rb:30:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:28:01 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signInUser(\n    email: {\n      email: \"gabriel@email.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signInUser(\n    email: {\n      email: \"gabriel@email.com\",\n      password: \"senha\"\n    }\n  ) {\n    token\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel@email.com"], ["LIMIT", 1]]
+Completed 200 OK in 132ms (Views: 0.2ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:28:08 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signInUser(\n    email: {\n      email: \"gabriel@email.com\",\n      password: \"senha\"\n    }\n  ) {\n    token,\n    user{\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signInUser(\n    email: {\n      email: \"gabriel@email.com\",\n      password: \"senha\"\n    }\n  ) {\n    token,\n    user{\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel@email.com"], ["LIMIT", 1]]
+Completed 200 OK in 177ms (Views: 1.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:29:26 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signInUser(\n    email: {\n      email: \"gabriel@email.com\",\n      password: \"senha\"\n    }\n  ) {\n    token,\n    user{\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signInUser(\n    email: {\n      email: \"gabriel@email.com\",\n      password: \"senha\"\n    }\n  ) {\n    token,\n    user{\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 1.9ms)
+
+
+  
+NameError (undefined local variable or method `ctx' for #<Resolvers::SignInUser:0x00007fc320f11978>
+Did you mean?  _ctx):
+  
+app/graphql/resolvers/sign_in_user.rb:30:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:29:32 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  signInUser(\n    email: {\n      email: \"gabriel@email.com\",\n      password: \"senha\"\n    }\n  ) {\n    token,\n    user{\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  signInUser(\n    email: {\n      email: \"gabriel@email.com\",\n      password: \"senha\"\n    }\n  ) {\n    token,\n    user{\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel@email.com"], ["LIMIT", 1]]
+Completed 200 OK in 125ms (Views: 1.8ms | ActiveRecord: 3.8ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserIdLink (20181218203024)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181218203024"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_link_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_link_id' AND type='index'
+[0m
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:33:42 -0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createLink(\n    url: \"http://localhost:3000/graphiql\",\n    description: \"Your sandbox for graphql\"\n  ) {\n    id\n    description\n    postedBy {\n      id\n      name\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  createLink(\n    url: \"http://localhost:3000/graphiql\",\n    description: \"Your sandbox for graphql\"\n  ) {\n    id\n    description\n    postedBy {\n      id\n      name\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 3.3ms)
+
+
+  
+ActiveModel::MissingAttributeError (can't write unknown attribute `user_id`):
+  
+app/graphql/resolvers/create_link.rb:14:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserIdLink (20181218203024)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181218203024"]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_link_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_link_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserIdLink (20181218203024)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "links" ADD "user_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_links_on_user_id" ON "links" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181218203024"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_links_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_links_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_link_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_link_id' AND type='index'
+[0m
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:35:53 -0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createLink(\n    url: \"http://localhost:3000/graphiql\",\n    description: \"Your sandbox for graphql\"\n  ) {\n    id\n    description\n    postedBy {\n      id\n      name\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  createLink(\n    url: \"http://localhost:3000/graphiql\",\n    description: \"Your sandbox for graphql\"\n  ) {\n    id\n    description\n    postedBy {\n      id\n      name\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["url", "http://localhost:3000/graphiql"], ["description", "Your sandbox for graphql"], ["created_at", "2018-12-18 20:35:53.887605"], ["updated_at", "2018-12-18 20:35:53.887605"], ["user_id", 5]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 77ms (Views: 0.3ms | ActiveRecord: 10.3ms)
+
+
