@@ -1241,3 +1241,44 @@ Processing by GraphqlController#execute as */*
 Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.7ms)
 
 
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 19:51:37 -0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query{\n\tallLinks(first: 2, skip: 1){\n    url\n    description\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query{\n\tallLinks(first: 2, skip: 1){\n    url\n    description\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT  "links".* FROM "links" LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 1]]
+Completed 200 OK in 281ms (Views: 0.9ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 19:51:49 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query{\n\tallLinks(first: 2){\n    url\n    description\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query{\n\tallLinks(first: 2){\n    url\n    description\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLink Load (1.2ms)[0m  [1m[34mSELECT  "links".* FROM "links" LIMIT ?[0m  [["LIMIT", 2]]
+Completed 200 OK in 77ms (Views: 1.1ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 19:51:57 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query{\n\tallLinks(first: 2, skip: 3){\n    url\n    description\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query{\n\tallLinks(first: 2, skip: 3){\n    url\n    description\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT  "links".* FROM "links" LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 3]]
+Completed 200 OK in 31ms (Views: 1.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 19:52:05 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query{\n\tallLinks(first: 1, skip: 3){\n    url\n    description\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query{\n\tallLinks(first: 1, skip: 3){\n    url\n    description\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLink Load (1.6ms)[0m  [1m[34mSELECT  "links".* FROM "links" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+Completed 200 OK in 75ms (Views: 1.7ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 19:52:09 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query{\n\tallLinks(first: 1, skip: 1){\n    url\n    description\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query{\n\tallLinks(first: 1, skip: 1){\n    url\n    description\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT  "links".* FROM "links" LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+Completed 200 OK in 73ms (Views: 1.0ms | ActiveRecord: 2.9ms)
+
+
