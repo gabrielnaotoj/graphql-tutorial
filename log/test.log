@@ -182,3 +182,32 @@ Resolvers::CreateUserTest: test_creating_new_user
   [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test User"], ["email", "email@example.com"], ["password_digest", "$2a$04$v3Kyukxx343oo35.xREmgOELeb9IBmeRkrgZvv2s6q/FhIFpEqX9C"], ["created_at", "2018-12-11 22:55:41.010881"], ["updated_at", "2018-12-11 22:55:41.010881"]]
   [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "links"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2018-12-18 19:25:35.435998', '2018-12-18 19:25:35.435998', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2018-12-18 19:25:35.435998', '2018-12-18 19:25:35.435998', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2018-12-18 19:25:35.439561', '2018-12-18 19:25:35.439561', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2018-12-18 19:25:35.439561', '2018-12-18 19:25:35.439561', 298486374)[0m
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+Resolvers::CreateUserTest: test_creating_new_user
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "email@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test User"], ["email", "email@example.com"], ["password_digest", "$2a$04$uHig72DyHSuXEhsDcdAB/e3HH73dubmEilMp1gOfnbHFbkuHH9wzC"], ["created_at", "2018-12-18 19:25:35.459521"], ["updated_at", "2018-12-18 19:25:35.459521"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+Resolvers::CreateLinkTest: test_creating_new_link
+-------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "http://example.com"], ["description", "description"], ["created_at", "2018-12-18 19:25:35.468250"], ["updated_at", "2018-12-18 19:25:35.468250"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m

@@ -11,7 +11,7 @@ class Resolvers::CreateUserTest < ActiveSupport::TestCase
       authProvider: {
         email: {
           email: 'email@example.com',
-          password: '[omitted]'
+          password: '123456'
         }
       }
     )
