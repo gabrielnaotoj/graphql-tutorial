@@ -1024,3 +1024,92 @@ Processing by GraphqlController#execute as */*
 Completed 200 OK in 77ms (Views: 0.3ms | ActiveRecord: 10.3ms)
 
 
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:43:19 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createVote(linkId: \"4\"){\n    link {\n      description\n    }\n    user {\n      name\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  createVote(linkId: \"4\"){\n    link {\n      description\n    }\n    user {\n      name\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "gabriel@email.com"], ["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "votes" ("link_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["link_id", 4], ["user_id", 5], ["created_at", "2018-12-18 20:43:20.102520"], ["updated_at", "2018-12-18 20:43:20.102520"]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 74ms (Views: 0.3ms | ActiveRecord: 8.8ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:45:49 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  allLinks{\n    votes{\n      id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query {\n  allLinks{\n    votes{\n      id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."link_id" = ?[0m  [["link_id", 1]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."link_id" = ?[0m  [["link_id", 2]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."link_id" = ?[0m  [["link_id", 4]]
+Completed 200 OK in 85ms (Views: 0.3ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:46:00 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  allLinks{\n    votes{\n      id\n      user\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query {\n  allLinks{\n    votes{\n      id\n      user\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:46:14 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  allLinks{\n    votes{\n      id\n      user_id\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query {\n  allLinks{\n    votes{\n      id\n      user_id\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 13ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:46:35 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  allLinks{\n    url\n    description\n    votes{\n      id\n      user\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query {\n  allLinks{\n    url\n    description\n    votes{\n      id\n      user\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:46:54 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  allLinks{\n    url\n    description\n    votes{\n      id\n      user{\n        name\n      }\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query {\n  allLinks{\n    url\n    description\n    votes{\n      id\n      user{\n        name\n      }\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  [1m[36mVote Load (0.5ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."link_id" = ?[0m  [["link_id", 1]]
+  [1m[36mVote Load (0.5ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."link_id" = ?[0m  [["link_id", 2]]
+  [1m[36mVote Load (1.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[36mVote Load (0.5ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."link_id" = ?[0m  [["link_id", 4]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 73ms (Views: 1.2ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:48:01 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  allLinks{\n    url\n    description\n    votes{\n      id\n      user{\n        name\n      }\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query {\n  allLinks{\n    url\n    description\n    votes{\n      id\n      user{\n        name\n      }\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."link_id" = ?[0m  [["link_id", 1]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."link_id" = ?[0m  [["link_id", 2]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."link_id" = ?[0m  [["link_id", 3]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."link_id" = ?[0m  [["link_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 87ms (Views: 0.4ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:48:54 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  allUsers {\n    id\n    name\n    link{\n      description\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query {\n  allUsers {\n    id\n    name\n    link{\n      description\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 1.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:49:12 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  allUsers {\n    id\n    name\n    votes{\n      link {\n        description\n      }\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query {\n  allUsers {\n    id\n    name\n    votes{\n      link {\n        description\n      }\n    }\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
