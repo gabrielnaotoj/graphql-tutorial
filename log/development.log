@@ -1113,3 +1113,61 @@ Processing by GraphqlController#execute as */*
 Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 1.0ms)
 
 
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:51:54 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  allLinks {\n    unknown\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query {\n  allLinks {\n    unknown\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:53:45 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation{\n  createLink(\n    url: \"123\"\n    description: \"456\"\n  ) {\n    id\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation{\n  createLink(\n    url: \"123\"\n    description: \"456\"\n  ) {\n    id\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 96ms (ActiveRecord: 3.8ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Url is too short (minimum is 5 characters), Description is too short (minimum is 5 characters)):
+  
+app/graphql/resolvers/create_link.rb:14:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:54:02 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation{\n  createLink(\n    url: \"123\",\n    description: \"456\"\n  ) {\n    id\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation{\n  createLink(\n    url: \"123\",\n    description: \"456\"\n  ) {\n    id\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 22ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Url is too short (minimum is 5 characters), Description is too short (minimum is 5 characters)):
+  
+app/graphql/resolvers/create_link.rb:14:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:54:09 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation{\n  createLink(\n    url: \"123\",\n    description: \"456\",\n  ) {\n    id\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation{\n  createLink(\n    url: \"123\",\n    description: \"456\",\n  ) {\n    id\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 25ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Url is too short (minimum is 5 characters), Description is too short (minimum is 5 characters)):
+  
+app/graphql/resolvers/create_link.rb:14:in `call'
+app/controllers/graphql_controller.rb:11:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-18 18:54:57 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation{\n  createLink(\n    url: \"123\",\n    description: \"456\",\n  ) {\n    id\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation{\n  createLink(\n    url: \"123\",\n    description: \"456\",\n  ) {\n    id\n  }\n}", "variables"=>nil}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 80ms (Views: 0.3ms | ActiveRecord: 3.3ms)
+
+
