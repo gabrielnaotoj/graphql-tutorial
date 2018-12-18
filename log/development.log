@@ -1,0 +1,346 @@
+Started GET "/" for 127.0.0.1 at 2018-12-11 19:46:15 -0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/gabriel/.rvm/gems/ruby-2.4.2/gems/railties-5.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/gabriel/.rvm/gems/ruby-2.4.2/gems/railties-5.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (3.7ms)
+Completed 200 OK in 539ms (Views: 10.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-11 19:46:16 -0200
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/gabriel/.rvm/gems/ruby-2.4.2/gems/railties-5.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/gabriel/.rvm/gems/ruby-2.4.2/gems/railties-5.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (3.9ms)
+Completed 200 OK in 19ms (Views: 13.0ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (327.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (253.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLinks (20181211215615)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181211215615"]]
+  [1m[35m (178.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-11 21:56:22.781622"], ["updated_at", "2018-12-11 21:56:22.781622"]]
+  [1m[35m (199.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "http://graphql.org/"], ["description", "The Best Query Language"], ["created_at", "2018-12-11 21:56:36.350498"], ["updated_at", "2018-12-11 21:56:36.350498"]]
+  [1m[35m (155.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "http://dev.apollodata.com/"], ["description", "Awesome GraphQL Client"], ["created_at", "2018-12-11 21:56:44.569997"], ["updated_at", "2018-12-11 21:56:44.569997"]]
+  [1m[35m (199.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/graphiql" for 127.0.0.1 at 2018-12-11 19:59:19 -0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/gabriel/.rvm/gems/ruby-2.4.2/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/gabriel/.rvm/gems/ruby-2.4.2/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb (1472.2ms)
+Completed 200 OK in 1496ms (Views: 1482.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 19:59:21 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n  query IntrospectionQuery {\n    __schema {\n      queryType { name }\n      mutationType { name }\n      subscriptionType { name }\n      types {\n        ...FullType\n      }\n      directives {\n        name\n        description\n        locations\n        args {\n          ...InputValue\n        }\n      }\n    }\n  }\n\n  fragment FullType on __Type {\n    kind\n    name\n    description\n    fields(includeDeprecated: true) {\n      name\n      description\n      args {\n        ...InputValue\n      }\n      type {\n        ...TypeRef\n      }\n      isDeprecated\n      deprecationReason\n    }\n    inputFields {\n      ...InputValue\n    }\n    interfaces {\n      ...TypeRef\n    }\n    enumValues(includeDeprecated: true) {\n      name\n      description\n      isDeprecated\n      deprecationReason\n    }\n    possibleTypes {\n      ...TypeRef\n    }\n  }\n\n  fragment InputValue on __InputValue {\n    name\n    description\n    type { ...TypeRef }\n    defaultValue\n  }\n\n  fragment TypeRef on __Type {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n", "graphql"=>{"query"=>"\n  query IntrospectionQuery {\n    __schema {\n      queryType { name }\n      mutationType { name }\n      subscriptionType { name }\n      types {\n        ...FullType\n      }\n      directives {\n        name\n        description\n        locations\n        args {\n          ...InputValue\n        }\n      }\n    }\n  }\n\n  fragment FullType on __Type {\n    kind\n    name\n    description\n    fields(includeDeprecated: true) {\n      name\n      description\n      args {\n        ...InputValue\n      }\n      type {\n        ...TypeRef\n      }\n      isDeprecated\n      deprecationReason\n    }\n    inputFields {\n      ...InputValue\n    }\n    interfaces {\n      ...TypeRef\n    }\n    enumValues(includeDeprecated: true) {\n      name\n      description\n      isDeprecated\n      deprecationReason\n    }\n    possibleTypes {\n      ...TypeRef\n    }\n  }\n\n  fragment InputValue on __InputValue {\n    name\n    description\n    type { ...TypeRef }\n    defaultValue\n  }\n\n  fragment TypeRef on __Type {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n"}}
+Completed 200 OK in 151ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/graphiql" for 127.0.0.1 at 2018-12-11 19:59:21 -0200
+Processing by GraphiQL::Rails::EditorsController#show as */*
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/gabriel/.rvm/gems/ruby-2.4.2/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/gabriel/.rvm/gems/ruby-2.4.2/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb (42.9ms)
+Completed 200 OK in 72ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/graphiql" for 127.0.0.1 at 2018-12-11 19:59:28 -0200
+Processing by GraphiQL::Rails::EditorsController#show as */*
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/gabriel/.rvm/gems/ruby-2.4.2/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/gabriel/.rvm/gems/ruby-2.4.2/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb (43.2ms)
+Completed 200 OK in 71ms (Views: 57.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 19:59:46 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"# Welcome to GraphiQL\n#\n# GraphiQL is an in-browser tool for writing, validating, and\n# testing GraphQL queries.\n#\n# Type queries into this side of the screen, and you will see intelligent\n# typeaheads aware of the current GraphQL type schema and live syntax and\n# validation errors highlighted within the text.\n#\n# GraphQL queries typically start with a \"{\" character. Lines that starts\n# with a # are ignored.\n#\n# An example GraphQL query might look like:\n#\n#     {\n#       field(arg: \"value\") {\n#         subField\n#       }\n#     }\n#\n# Keyboard shortcuts:\n#\n#       Run Query:  Ctrl-Enter (or press the play button above)\n#\n#   Auto Complete:  Ctrl-Space (or just start typing)\n#\n\n\n{\n  testField{\n    \n  }\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"# Welcome to GraphiQL\n#\n# GraphiQL is an in-browser tool for writing, validating, and\n# testing GraphQL queries.\n#\n# Type queries into this side of the screen, and you will see intelligent\n# typeaheads aware of the current GraphQL type schema and live syntax and\n# validation errors highlighted within the text.\n#\n# GraphQL queries typically start with a \"{\" character. Lines that starts\n# with a # are ignored.\n#\n# An example GraphQL query might look like:\n#\n#     {\n#       field(arg: \"value\") {\n#         subField\n#       }\n#     }\n#\n# Keyboard shortcuts:\n#\n#       Run Query:  Ctrl-Enter (or press the play button above)\n#\n#   Auto Complete:  Ctrl-Space (or just start typing)\n#\n\n\n{\n  testField{\n    \n  }\n}", "variables"=>nil, "operationName"=>nil}}
+Completed 200 OK in 8ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 19:59:53 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"# Welcome to GraphiQL\n#\n# GraphiQL is an in-browser tool for writing, validating, and\n# testing GraphQL queries.\n#\n# Type queries into this side of the screen, and you will see intelligent\n# typeaheads aware of the current GraphQL type schema and live syntax and\n# validation errors highlighted within the text.\n#\n# GraphQL queries typically start with a \"{\" character. Lines that starts\n# with a # are ignored.\n#\n# An example GraphQL query might look like:\n#\n#     {\n#       field(arg: \"value\") {\n#         subField\n#       }\n#     }\n#\n# Keyboard shortcuts:\n#\n#       Run Query:  Ctrl-Enter (or press the play button above)\n#\n#   Auto Complete:  Ctrl-Space (or just start typing)\n#\n\n\n{\n  testField\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"# Welcome to GraphiQL\n#\n# GraphiQL is an in-browser tool for writing, validating, and\n# testing GraphQL queries.\n#\n# Type queries into this side of the screen, and you will see intelligent\n# typeaheads aware of the current GraphQL type schema and live syntax and\n# validation errors highlighted within the text.\n#\n# GraphQL queries typically start with a \"{\" character. Lines that starts\n# with a # are ignored.\n#\n# An example GraphQL query might look like:\n#\n#     {\n#       field(arg: \"value\") {\n#         subField\n#       }\n#     }\n#\n# Keyboard shortcuts:\n#\n#       Run Query:  Ctrl-Enter (or press the play button above)\n#\n#   Auto Complete:  Ctrl-Space (or just start typing)\n#\n\n\n{\n  testField\n}", "variables"=>nil, "operationName"=>nil}}
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:00:03 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"# Welcome to GraphiQL\n#\n# GraphiQL is an in-browser tool for writing, validating, and\n# testing GraphQL queries.\n#\n# Type queries into this side of the screen, and you will see intelligent\n# typeaheads aware of the current GraphQL type schema and live syntax and\n# validation errors highlighted within the text.\n#\n# GraphQL queries typically start with a \"{\" character. Lines that starts\n# with a # are ignored.\n#\n# An example GraphQL query might look like:\n#\n#     {\n#       field(arg: \"value\") {\n#         subField\n#       }\n#     }\n#\n# Keyboard shortcuts:\n#\n#       Run Query:  Ctrl-Enter (or press the play button above)\n#\n#   Auto Complete:  Ctrl-Space (or just start typing)\n#\n\n\n{\n  testField\n  allLinks {\n    id\n  }\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"# Welcome to GraphiQL\n#\n# GraphiQL is an in-browser tool for writing, validating, and\n# testing GraphQL queries.\n#\n# Type queries into this side of the screen, and you will see intelligent\n# typeaheads aware of the current GraphQL type schema and live syntax and\n# validation errors highlighted within the text.\n#\n# GraphQL queries typically start with a \"{\" character. Lines that starts\n# with a # are ignored.\n#\n# An example GraphQL query might look like:\n#\n#     {\n#       field(arg: \"value\") {\n#         subField\n#       }\n#     }\n#\n# Keyboard shortcuts:\n#\n#       Run Query:  Ctrl-Enter (or press the play button above)\n#\n#   Auto Complete:  Ctrl-Space (or just start typing)\n#\n\n\n{\n  testField\n  allLinks {\n    id\n  }\n}", "variables"=>nil, "operationName"=>nil}}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+Completed 200 OK in 24ms (Views: 0.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:00:16 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"# Welcome to GraphiQL\n#\n# GraphiQL is an in-browser tool for writing, validating, and\n# testing GraphQL queries.\n#\n# Type queries into this side of the screen, and you will see intelligent\n# typeaheads aware of the current GraphQL type schema and live syntax and\n# validation errors highlighted within the text.\n#\n# GraphQL queries typically start with a \"{\" character. Lines that starts\n# with a # are ignored.\n#\n# An example GraphQL query might look like:\n#\n#     {\n#       field(arg: \"value\") {\n#         subField\n#       }\n#     }\n#\n# Keyboard shortcuts:\n#\n#       Run Query:  Ctrl-Enter (or press the play button above)\n#\n#   Auto Complete:  Ctrl-Space (or just start typing)\n#\n\n\n{\n  testField\n  allLinks {\n    id,\n    url,\n    description\n  }\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"# Welcome to GraphiQL\n#\n# GraphiQL is an in-browser tool for writing, validating, and\n# testing GraphQL queries.\n#\n# Type queries into this side of the screen, and you will see intelligent\n# typeaheads aware of the current GraphQL type schema and live syntax and\n# validation errors highlighted within the text.\n#\n# GraphQL queries typically start with a \"{\" character. Lines that starts\n# with a # are ignored.\n#\n# An example GraphQL query might look like:\n#\n#     {\n#       field(arg: \"value\") {\n#         subField\n#       }\n#     }\n#\n# Keyboard shortcuts:\n#\n#       Run Query:  Ctrl-Enter (or press the play button above)\n#\n#   Auto Complete:  Ctrl-Space (or just start typing)\n#\n\n\n{\n  testField\n  allLinks {\n    id,\n    url,\n    description\n  }\n}", "variables"=>nil, "operationName"=>nil}}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:00:28 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"# Welcome to GraphiQL\n#\n# GraphiQL is an in-browser tool for writing, validating, and\n# testing GraphQL queries.\n#\n# Type queries into this side of the screen, and you will see intelligent\n# typeaheads aware of the current GraphQL type schema and live syntax and\n# validation errors highlighted within the text.\n#\n# GraphQL queries typically start with a \"{\" character. Lines that starts\n# with a # are ignored.\n#\n# An example GraphQL query might look like:\n#\n#     {\n#       field(arg: \"value\") {\n#         subField\n#       }\n#     }\n#\n# Keyboard shortcuts:\n#\n#       Run Query:  Ctrl-Enter (or press the play button above)\n#\n#   Auto Complete:  Ctrl-Space (or just start typing)\n#\n\n\n{\n  allLinks {\n    id,\n    url,\n    description\n    \ttestField\n  }\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"# Welcome to GraphiQL\n#\n# GraphiQL is an in-browser tool for writing, validating, and\n# testing GraphQL queries.\n#\n# Type queries into this side of the screen, and you will see intelligent\n# typeaheads aware of the current GraphQL type schema and live syntax and\n# validation errors highlighted within the text.\n#\n# GraphQL queries typically start with a \"{\" character. Lines that starts\n# with a # are ignored.\n#\n# An example GraphQL query might look like:\n#\n#     {\n#       field(arg: \"value\") {\n#         subField\n#       }\n#     }\n#\n# Keyboard shortcuts:\n#\n#       Run Query:  Ctrl-Enter (or press the play button above)\n#\n#   Auto Complete:  Ctrl-Space (or just start typing)\n#\n\n\n{\n  allLinks {\n    id,\n    url,\n    description\n    \ttestField\n  }\n}", "variables"=>nil, "operationName"=>nil}}
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:00:37 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"# Welcome to GraphiQL\n#\n# GraphiQL is an in-browser tool for writing, validating, and\n# testing GraphQL queries.\n#\n# Type queries into this side of the screen, and you will see intelligent\n# typeaheads aware of the current GraphQL type schema and live syntax and\n# validation errors highlighted within the text.\n#\n# GraphQL queries typically start with a \"{\" character. Lines that starts\n# with a # are ignored.\n#\n# An example GraphQL query might look like:\n#\n#     {\n#       field(arg: \"value\") {\n#         subField\n#       }\n#     }\n#\n# Keyboard shortcuts:\n#\n#       Run Query:  Ctrl-Enter (or press the play button above)\n#\n#   Auto Complete:  Ctrl-Space (or just start typing)\n#\n\n\n{\n  allLinks {\n    id,\n    url,\n    description\n  }\n  testField\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"# Welcome to GraphiQL\n#\n# GraphiQL is an in-browser tool for writing, validating, and\n# testing GraphQL queries.\n#\n# Type queries into this side of the screen, and you will see intelligent\n# typeaheads aware of the current GraphQL type schema and live syntax and\n# validation errors highlighted within the text.\n#\n# GraphQL queries typically start with a \"{\" character. Lines that starts\n# with a # are ignored.\n#\n# An example GraphQL query might look like:\n#\n#     {\n#       field(arg: \"value\") {\n#         subField\n#       }\n#     }\n#\n# Keyboard shortcuts:\n#\n#       Run Query:  Ctrl-Enter (or press the play button above)\n#\n#   Auto Complete:  Ctrl-Space (or just start typing)\n#\n\n\n{\n  allLinks {\n    id,\n    url,\n    description\n  }\n  testField\n}", "variables"=>nil, "operationName"=>nil}}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/graphiql" for 127.0.0.1 at 2018-12-11 20:05:06 -0200
+Processing by GraphiQL::Rails::EditorsController#show as */*
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/gabriel/.rvm/gems/ruby-2.4.2/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/gabriel/.rvm/gems/ruby-2.4.2/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb (23.1ms)
+Completed 200 OK in 48ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/graphiql" for 127.0.0.1 at 2018-12-11 20:16:05 -0200
+Processing by GraphiQL::Rails::EditorsController#show as */*
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/gabriel/.rvm/gems/ruby-2.4.2/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/gabriel/.rvm/gems/ruby-2.4.2/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb (20.3ms)
+Completed 200 OK in 50ms (Views: 36.4ms)
+
+
+Started GET "/graphiql" for 127.0.0.1 at 2018-12-11 20:16:18 -0200
+Processing by GraphiQL::Rails::EditorsController#show as */*
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/gabriel/.rvm/gems/ruby-2.4.2/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/gabriel/.rvm/gems/ruby-2.4.2/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb (25.5ms)
+Completed 200 OK in 50ms (Views: 39.3ms)
+
+
+Started GET "/graphiql" for 127.0.0.1 at 2018-12-11 20:16:50 -0200
+Processing by GraphiQL::Rails::EditorsController#show as */*
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/gabriel/.rvm/gems/ruby-2.4.2/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/gabriel/.rvm/gems/ruby-2.4.2/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb (57.4ms)
+Completed 200 OK in 84ms (Views: 70.3ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:16:59 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createLink(url: \"http://www.google.com\", description: \"A search engine\") {\n    id\n  }\n}\n", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  createLink(url: \"http://www.google.com\", description: \"A search engine\") {\n    id\n  }\n}\n", "variables"=>nil}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "http://www.google.com"], ["description", "A search engine"], ["created_at", "2018-12-11 22:16:59.542408"], ["updated_at", "2018-12-11 22:16:59.542408"]]
+  [1m[35m (217.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 292ms (Views: 0.4ms | ActiveRecord: 221.3ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:17:15 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n\n{\n  allLinks {\n    id\n  }\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"\n\n{\n  allLinks {\n    id\n  }\n}", "variables"=>nil, "operationName"=>nil}}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+Completed 200 OK in 9ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:17:26 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n\n{\n  allLinks {\n    id\n    url\n    description\n  }\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"\n\n{\n  allLinks {\n    id\n    url\n    description\n  }\n}", "variables"=>nil, "operationName"=>nil}}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20181211222652)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181211222652"]]
+  [1m[35m (221.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:51:21 -0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createUser(\n    name: \"Gabriel Naoto\",\n    authProvider: {\n      email: {\n        email: \"gabriel.naoto@jungsoft.com\",\n        password: \"123456\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  createUser(\n    name: \"Gabriel Naoto\",\n    authProvider: {\n      email: {\n        email: \"gabriel.naoto@jungsoft.com\",\n        password: \"123456\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gabriel Naoto"], ["email", "gabriel.naoto@jungsoft.com"], ["password_digest", "$2a$10$UouVkSVvvy6fkcDw//hlwO1nFB8cmRs9z6wGrWHpSJC/JNhBVh1a2"], ["created_at", "2018-12-11 22:51:22.246172"], ["updated_at", "2018-12-11 22:51:22.246172"]]
+  [1m[35m (187.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 382ms (Views: 0.6ms | ActiveRecord: 190.7ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:51:23 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createUser(\n    name: \"Gabriel Naoto\",\n    authProvider: {\n      email: {\n        email: \"gabriel.naoto@jungsoft.com\",\n        password: \"123456\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  createUser(\n    name: \"Gabriel Naoto\",\n    authProvider: {\n      email: {\n        email: \"gabriel.naoto@jungsoft.com\",\n        password: \"123456\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 146ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/graphql/resolvers/create_user.rb:14:in `call'
+app/controllers/graphql_controller.rb:10:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:51:27 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createUser(\n    name: \"Gabriel Naoto\",\n    authProvider: {\n      email: {\n        email: \"gabriel.naoto@jungsoft.com\",\n        password: \"123456\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  createUser(\n    name: \"Gabriel Naoto\",\n    authProvider: {\n      email: {\n        email: \"gabriel.naoto@jungsoft.com\",\n        password: \"123456\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gabriel.naoto@jungsoft.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 103ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/graphql/resolvers/create_user.rb:14:in `call'
+app/controllers/graphql_controller.rb:10:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:51:50 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createUser(\n    name: \"Raphael Takato\",\n    authProvider: {\n      email: {\n        email: \"raphael@jungsoft.com\",\n        password: \"123456\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  createUser(\n    name: \"Raphael Takato\",\n    authProvider: {\n      email: {\n        email: \"raphael@jungsoft.com\",\n        password: \"123456\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "raphael@jungsoft.com"], ["LIMIT", 1]]
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Raphael Takato"], ["email", "raphael@jungsoft.com"], ["password_digest", "$2a$10$D7lVSnaUZXgcYnaIBt3JYu09UvCdg3zky8OHHzH.2fzpmflwI7AYO"], ["created_at", "2018-12-11 22:51:50.493889"], ["updated_at", "2018-12-11 22:51:50.493889"]]
+  [1m[35m (248.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 368ms (Views: 0.5ms | ActiveRecord: 252.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:51:53 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createUser(\n    name: \"Raphael Takato\",\n    authProvider: {\n      email: {\n        email: \"raphael@jungsoft.com\",\n        password: \"123456\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  createUser(\n    name: \"Raphael Takato\",\n    authProvider: {\n      email: {\n        email: \"raphael@jungsoft.com\",\n        password: \"123456\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "raphael@jungsoft.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 103ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/graphql/resolvers/create_user.rb:14:in `call'
+app/controllers/graphql_controller.rb:10:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:51:56 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createUser(\n    name: \"Raphael Takato\",\n    authProvider: {\n      email: {\n        email: \"1@jungsoft.com\",\n        password: \"123456\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  createUser(\n    name: \"Raphael Takato\",\n    authProvider: {\n      email: {\n        email: \"1@jungsoft.com\",\n        password: \"123456\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "1@jungsoft.com"], ["LIMIT", 1]]
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Raphael Takato"], ["email", "1@jungsoft.com"], ["password_digest", "$2a$10$hOVUEtzxkYO.T.wo.IWr2u12luPhFH0a0wFUk/FFPG/Qd6kH8zb9u"], ["created_at", "2018-12-11 22:51:56.884158"], ["updated_at", "2018-12-11 22:51:56.884158"]]
+  [1m[35m (256.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 373ms (Views: 0.5ms | ActiveRecord: 260.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:52:00 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createUser(\n    name: \"Raphael Takato\",\n    authProvider: {\n      email: {\n        email: \"12@jungsoft.com\",\n        password: \"123456\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  createUser(\n    name: \"Raphael Takato\",\n    authProvider: {\n      email: {\n        email: \"12@jungsoft.com\",\n        password: \"123456\"\n      }\n    }\n  ) {\n    id\n    email\n    name\n  }\n}", "variables"=>nil}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "12@jungsoft.com"], ["LIMIT", 1]]
+  [1m[35mSQL (5.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Raphael Takato"], ["email", "12@jungsoft.com"], ["password_digest", "$2a$10$WPbTeQU5GYs0ahV9Ahqf0.H66CDrMu5pv9Mcyf0vxUXOlaWuANnP2"], ["created_at", "2018-12-11 22:52:00.727154"], ["updated_at", "2018-12-11 22:52:00.727154"]]
+  [1m[35m (190.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 305ms (Views: 0.4ms | ActiveRecord: 195.9ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:52:14 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil}}
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:53:06 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil}}
+Completed 200 OK in 43ms (Views: 0.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:53:07 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil}}
+Completed 200 OK in 3ms (Views: 0.4ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:53:08 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil}}
+Completed 200 OK in 3ms (Views: 0.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:53:09 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil}}
+Completed 200 OK in 3ms (Views: 0.4ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:53:09 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil}}
+Completed 200 OK in 3ms (Views: 0.4ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:53:10 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil}}
+Completed 200 OK in 3ms (Views: 0.4ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:53:10 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"{\n\tallUsers\n}", "variables"=>nil, "operationName"=>nil}}
+Completed 200 OK in 2ms (Views: 0.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:53:38 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n\tallLinks {\n\t  id\n\t}\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"{\n\tallLinks {\n\t  id\n\t}\n}", "variables"=>nil, "operationName"=>nil}}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:53:49 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n\tallLinks {\n\t  id\n\t}\n  allUsers {\n\t  id\n\t}\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"{\n\tallLinks {\n\t  id\n\t}\n  allUsers {\n\t  id\n\t}\n}", "variables"=>nil, "operationName"=>nil}}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 26ms (Views: 0.7ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:53:55 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n\tallLinks {\n\t  id\n\t}\n  allUsers {\n\t  id\n    name\n\t}\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"{\n\tallLinks {\n\t  id\n\t}\n  allUsers {\n\t  id\n    name\n\t}\n}", "variables"=>nil, "operationName"=>nil}}
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:54:03 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n\tallLinks {\n\t  id\n\t}\n  allUsers {\n\t  id\n    name\n    email\n\t}\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"{\n\tallLinks {\n\t  id\n\t}\n  allUsers {\n\t  id\n    name\n    email\n\t}\n}", "variables"=>nil, "operationName"=>nil}}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:54:11 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n\tallLinks {\n\t  id\n\t}\n  allUsers {\n\t  id\n    name\n    email{\n      email\n      password\n    }\n\t}\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"{\n\tallLinks {\n\t  id\n\t}\n  allUsers {\n\t  id\n    name\n    email{\n      email\n      password\n    }\n\t}\n}", "variables"=>nil, "operationName"=>nil}}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2018-12-11 20:54:31 -0200
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n\tallLinks {\n\t  id\n\t}\n  allUsers {\n\t  id\n    name\n    email\n\t}\n}", "variables"=>nil, "operationName"=>nil, "graphql"=>{"query"=>"{\n\tallLinks {\n\t  id\n\t}\n  allUsers {\n\t  id\n    name\n    email\n\t}\n}", "variables"=>nil, "operationName"=>nil}}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 0.7ms)
+
+
